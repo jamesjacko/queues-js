@@ -11,7 +11,7 @@
   Removes the first object from the queue
 
 */
-function queue(){
+function Queue(){
   this.first = null;
   this.last = null;
   this.length = 0;
