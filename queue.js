@@ -39,4 +39,12 @@ function Queue(){
     }
     this.length--;
   }
+  // returns the size of the queue
+  this.getSize = fuction(){
+    return this.length;
+  }
+  // returns the first object in the queueu
+  this.getNextInQueue = function(){
+    return this.first();
+  }
 }
