@@ -20,7 +20,7 @@ function SuperMarket(num_queues, payment_time){
     var newCustomer = Math.floor(Math.random() * 100) + payment_time;
     queues[shortest].add(newCustomer);
     queueLengths[shortest] += newCustomer;
-    findShortest();
+    this.findShortest();
   }
   
   this.processItem(queue) = function(){
@@ -28,7 +28,7 @@ function SuperMarket(num_queues, payment_time){
       queues[queue].first.obj.remove();
     }
     queueLengths[queue]--;
-    findShortest();
+    this.findShortest();
   }
   
 }
