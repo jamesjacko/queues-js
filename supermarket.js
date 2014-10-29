@@ -4,9 +4,11 @@ function SuperMarket(num_queues, payment_time){
   this.shortest = 0;
   this.queueLengths = new Array();
   
-  for(var i = 0; i < num_queues; i++){
-    this.queues.push(new Queue());
-    this.queueLengths.push(0);
+  this.init() = function(){
+    for(var i = 0; i < num_queues; i++){
+      this.queues.push(new Queue());
+      this.queueLengths.push(0);
+    }
   }
   
   this.findShortest() = function(){
