@@ -40,7 +40,7 @@ function Queue(){
     this.length--;
   }
   // returns the size of the queue
-  this.getSize = fuction(){
+  this.getSize = function(){
     return this.length;
   }
   // returns the first object in the queueu
