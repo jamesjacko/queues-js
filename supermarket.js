@@ -3,7 +3,8 @@ function SuperMarket(num_queues, payment_time){
   this.queues = new Array();
   this.shortest = 0;
   this.queueLengths = new Array();
-  
+  this.itemsToProcess = new Array();
+
   this.init = function(){
     for(var i = 0; i < num_queues; i++){
       this.queues.push(new Queue());
@@ -24,18 +25,23 @@ function SuperMarket(num_queues, payment_time){
   }
   
   this.processItems = function(){
-    for(var queue = 0; queue < num_queues; queue++);
-    {
-      if(--queues[queue].first.obj == 0)
-        queues[queue].first.obj.remove();
+    for(var queueCounter = 0; queueCounter < num_queues; queueCounter++){
+      if(!this.queues[queueCounter].isEmpty()){
+        if(this.itemsToProcess[queueCounter] === null || this.itemsToProcess[queueCounter] === 0){
+          this.itemsToProcess[queueCounter] = this.queues[queueCounter].first;
+          this.queues[queueCounter].remove();
+        }
+        this.itemsToProcessp[queueCounter]--;
+        this.queueLengths[queueCounter]--;
+      }
     }
-    this.findShortest();
   }
 
   this.toString = function(){
     var string = "";
     for(var i = 0; i < num_queues; i++){
-      string += this.queueLengths[i] + " ";
+      string += "Queue: " + this.queues[i].getSize() + " [" + this.queueLengths[i] + "] ";
+      string += "\nServing: " + this.itemsToProcess[i] + "\n";
     }
     return string;
   }

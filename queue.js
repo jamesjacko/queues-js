@@ -31,13 +31,15 @@ function Queue(){
   }
   // removes the first node from the queue
   this.remove = function(){
-    if(this.first.next === null){
-      this.first = null;
-      this.last = null;
-    } else {
-      this.first = this.first.next;
+    if(this.first !== null){
+      if(this.first.next === null){
+        this.first = null;
+        this.last = null;
+      } else {
+        this.first = this.first.next;
+      }
+      this.length--;
     }
-    this.length--;
   }
   // returns the size of the queue
   this.getSize = function(){
@@ -45,6 +47,10 @@ function Queue(){
   }
   // returns the first object in the queueu
   this.getNextInQueue = function(){
-    return this.first();
+    return this.first;
+  }
+
+  this.isEmpty = function(){
+    return this.first === null;
   }
 }
