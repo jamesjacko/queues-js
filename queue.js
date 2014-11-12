@@ -47,7 +47,7 @@ function Queue(){
   }
   // returns the first object in the queueu
   this.getNextInQueue = function(){
-    return this.first;
+    return this.first.obj;
   }
 
   this.isEmpty = function(){

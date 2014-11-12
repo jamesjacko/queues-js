@@ -11,5 +11,6 @@ setInterval(function(){
 setInterval(function(){
 	if(Math.floor(Math.random() * 4) === 1)
 		supermarket.addACustomer();
+	//console.clear();
 	console.log(supermarket.toString());
 }, 1000);
