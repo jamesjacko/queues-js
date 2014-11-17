@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <script type="text/javascript" src="queue.js"></script>
+  <script type="text/javascript" src="supermarket.js"></script>
+  <script type="text/javascript" src="script.js"></script>
+</head>
+<body>
+	<form>
+		<input type="radio" name="type" value="auto" checked onclick="handleRadioClick(this)"> automatic (item processed every 100th of a second, customer added every second) <br />
+		<input type="radio" name="type" value="man" onclick="handleRadioClick(this)"> manual (return to add customer, p to process item)<br />
+	</form>
+	<canvas id="canvas" width="800" height="600"></canvas>s
+</body>
+</html>
