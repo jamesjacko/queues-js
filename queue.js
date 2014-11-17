@@ -49,10 +49,13 @@ function Queue(){
   this.getNextInQueue = function(){
     return this.first.obj;
   }
-
+  // returns if the queue is empty or not
   this.isEmpty = function(){
     return this.first === null;
   }
+
+  // reduces the integer value of the first element in the queue and
+  // removes it if it hits zero
   this.reduceFirst = function(){
     if(this.first !== null){
       if(this.first.obj - 1 === 0){
