@@ -30,7 +30,7 @@ function Queue(){
     this.length++;
   }
   // removes the first node from the queue
-  this.remove = function(){
+  this.removeFromQueue = function(){
     if(this.first !== null){
       if(this.first.next === null){
         this.first = null;
@@ -52,5 +52,17 @@ function Queue(){
 
   this.isEmpty = function(){
     return this.first === null;
+  }
+  this.reduceFirst = function(){
+    if(this.first !== null){
+      if(this.first.obj - 1 === 0){
+        this.removeFromQueue();
+        return false;
+      } else {
+        this.first.obj--;
+      }
+      return true;
+    }
+    return false;
   }
 }
